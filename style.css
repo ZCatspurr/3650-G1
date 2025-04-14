@@ -1,0 +1,35 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+  }
+  
+  .bg-maroon {
+    background-color: #70193D;
+  }
+  
+  .btn-maroon {
+    background-color: #70193D;
+    color: #fff;
+  }
+  
+  .btn-maroon:hover {
+    background-color: #5a1533;
+    color: #fff;
+  }
+  
+  .accordion-button {
+    font-weight: bold;
+  }
+  
+  .accordion-button::after {
+    color: #70193D;
+  }
+  
+  a {
+    color: #70193D;
+  }
+  
+  footer {
+    font-size: 0.85rem;
+  }
+  

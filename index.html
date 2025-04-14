@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Rooms | Brooklyn College</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="bg-maroon text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="d-flex align-items-center">
+        <img src="assets\Brooklyn_College_Seal.png" alt="Brooklyn College Logo" style="height: 80px;" />
+        <div>
+          <h4 class="m-0">Library &<br />Academic IT</h4>
+        </div>
+      </div>
+      <div class="text-end small">
+        <span>Library is<br>Open 8am–8:45pm<br>
+            <a href="https://library.brooklyn.cuny.edu/library/about/hours/" target="_blank" style="color: white; text-decoration: underline;">Hours ⏺</a>
+          </span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="bg-maroon text-end text-white px-4 py-1">
+    <a href="#" class="text-white me-3 text-decoration-none">Students</a>
+    <a href="#" class="text-white me-3 text-decoration-none">FAQ</a>
+    <a href="#" class="text-white text-decoration-none">About Us</a>
+  </nav>
+
+  <main class="container-fluid px-4 py-5">
+    <div class="row">
+      <!-- Left Hand Side -->
+      <div class="col-md-8">
+        <h2><strong>Study Rooms</strong></h2>
+        <p>There are 17 group study rooms on every floor of the Library. Rooms 036 and 146 have adjustable height tables for person with disabilities. Room 134 has <a href="#">adaptive equipment for people with disabilities</a>.</p>
+        <p>Students can book a room for up to <strong>two hours</strong>, on a first-come first-served basis, at the New Media desk, 2nd Floor Library or online. There is a two-person minimum for group study rooms.</p>
+        <p>Brooklyn College students and CUNY Faculty are welcome to use our group study rooms for study, group work, online classes, job interviews, etc.</p>
+        <p>Room keys loaned out for up to <strong>two hours</strong> from the Circulation Desk (2nd floor). Reservations are held for <strong>15 minutes</strong> after start time (and then canceled after that). Fines may accrue for keys returned late (see “Rules for Reservable Rooms”).</p>
+
+        <ul class="accordion mt-4" id="accordionExample">
+          <li class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                Rules for Reservable Rooms
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                 room usage rules 
+            </div>
+          </li>
+          <li class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                Instructions: Reserve a Room
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                 reservation instructions
+              </div>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                Instructions: Change or Cancel Room Reservation
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                 change/cancel instructions etc..etc.
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <button class="btn btn-maroon mt-4">Book a Room</button>
+      </div>
+
+      <!-- Right Hand Side -->
+      <div class="col-md-4">
+        <div class="card bg-maroon text-white p-3 mb-3">
+          <h4><strong>Joining a Friend?</strong></h4>
+          <form id="joinForm">
+            <div class="mb-2">
+              <label class="form-label">Enter EMPLID:</label>
+              <input type="text" class="form-control" required />
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Enter Password:</label>
+              <input type="password" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Enter Room Number:</label>
+              <input type="text" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-light w-100">Join Room Reservation</button>
+          </form>
+        </div>
+
+        <h5 class="fw-bold">Brooklyn College & CUNY Library Computer Login Information</h5>
+        <button class="btn btn-maroon w-100 mt-2">Click Here for Instructions</button>
+      </div>
+    </div>
+  </main>
+
+
+  <!--Footer-->>
+  <footer class="bg-maroon text-white text-center py-4 small">
+    Brooklyn College Library<br />
+    2900 Bedford Avenue, Brooklyn, NY 11210<br />
+    (718) 951-5335
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
