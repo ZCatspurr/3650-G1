@@ -4,10 +4,22 @@
   This takes away the hassle of having to travel to the library to sign in, and it allows users
   to see what rooms are available at the moment.
 
+
 ## Table of Contents
-  -[Usage](#usage)
-  -[Technologies](#Technologies)
-  -[Issues](#issues)
+  *[Usage](#usage)
+  *[Technologies](#technologies)
+  *[Issues](#issues)
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Usage 
@@ -18,11 +30,24 @@ with amenitites such as a television and whiteboard, you won't have to go all th
 This web app acts as the middle man between you and the room.
 
 
+
+
+
+
+
+
 ## Technologies (used to build the App)
 *GitHub: To keep track of changes to the source code
 *HTML (Hyper Text Markup Language): Structure and Outline the Website
 *CSS (Cascading Style Sheets): Gives the color, font, and visual appeal of the web app
 *Javascript: button functionality
+
+
+
+
+
+
+
 
 ## Issues (Work In Progress)
 *Displaying Available Study Rooms
@@ -31,4 +56,4 @@ This web app acts as the middle man between you and the room.
 
 
 
-## Issues (Work In Progress)
+
