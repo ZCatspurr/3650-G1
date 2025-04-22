@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Study Rooms | Brooklyn College</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="bg-maroon text-white py-3">
@@ -153,24 +152,126 @@
           <form id="joinForm">
             <div class="mb-2">
               <label class="form-label">Enter EMPLID:</label>
-              <input type="text" class="form-control" required />
+              <input 
+                id = "emplid"
+                type="text" 
+                class="form-control" 
+                pattern= "\d{8}"
+                title= "Enter your 8 digit EMPLID."
+                maxlength="8"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+                required />
             </div>
-            <div class="mb-2">
+      <div class="mb-2">
               <label class="form-label">Enter Password:</label>
-              <input type="password" class="form-control" required />
-            </div>
-            <div class="mb-3">
+              <input 
+                id="password" 
+                class="form-control pe-5" 
+                type="password" 
+                style="padding-right: 85px;"
+                pattern= "[A-Za-z]{2}\d{2}/\d{2}/\d{2}"
+                title= "Enter your password in FLMM/DD/YY."
+                maxlength="10"
+                oninput="formatPassword(this)"
+                required />
+                <i class="bi bi-eye-slash text-dark position-absolute" 
+                    id="passwordToggle"
+                    style="right: 12px; top: 50%; transform: translateY(-30%); cursor: pointer; font-size: 1.1rem;"></i>
+      </div>
+
+      <div class="mb-3">
               <label class="form-label">Enter Room Number:</label>
-              <input type="text" class="form-control" required />
-            </div>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="roomNum"
+                pattern= "\d{3}"
+                title= "Enter 3 digit room code."
+                maxlength="3"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+                required />
+      </div>
             <button type="submit" class="btn btn-light w-100">Join Room Reservation</button>
           </form>
         </div>
 
+<!-- Scripts for above stuff -->
+ <script>
+  document.getElementById('passwordToggle')?.addEventListener('click', function() {
+  const input = document.getElementById('password');
+  const isHidden = input.type === 'password';
+  
+  input.type = isHidden ? 'text' : 'password';
+  this.className = isHidden 
+    ? 'bi bi-eye text-dark position-absolute' 
+    : 'bi bi-eye-slash text-dark position-absolute';
+  
+  this.style.right = '12px';
+  this.style.top = '50%';
+  this.style.transform = 'translateY(-30%)';
+  this.style.cursor = 'pointer';
+  this.style.fontSize = '1.1rem';
+});
+
+  function formatPassword(input) {
+    let cursorPos = input.selectionStart;
+    let rawValue = input.value.replace(/[^A-Za-z0-9]/g, '');
+    
+    if (rawValue.length > 0) {
+      rawValue = rawValue.slice(0, 2).toUpperCase() + rawValue.slice(2);
+    }
+  
+    let formattedValue = '';
+    for (let i = 0; i < rawValue.length; i++) {
+      if (i === 2 && rawValue.length > 2) {
+        formattedValue += '/';
+      }
+      if (i === 4 && rawValue.length > 4) {
+        formattedValue += '/';
+      }
+      formattedValue += rawValue[i];
+    }
+    
+    // moving cursor for added slashes 
+    let newCursorPos = cursorPos;
+    if (cursorPos > 2 && rawValue.length >= 2) newCursorPos++;
+    if (cursorPos > 4 && rawValue.length >= 4) newCursorPos++;
+    if (newCursorPos > formattedValue.length) newCursorPos = formattedValue.length;
+    
+    input.setSelectionRange(newCursorPos, newCursorPos);
+    
+}
+  document.getElementById('joinForm').addEventListener('submit', function(e) {
+    const emplid = document.getElementById('emplid');
+    if (!/^\d{8}$/.test(emplid.value)) {
+      e.preventDefault();
+      alert('EMPLID must be exactly 8 digits');
+      emplid.focus();
+      return;
+    }
+    
+    const password = document.getElementById('password');
+    if (!/^[A-Za-z]{2}\d{2}\/\d{2}\/\d{2}$/.test(password.value)) {
+      e.preventDefault();
+      alert('Password must be in FLMM/DD/YY format.');
+      password.focus();
+      return;
+    }
+    
+    const roomNumber = document.getElementById('roomNumber');
+    if (!/^\d{3}$/.test(roomNumber.value)) {
+      e.preventDefault();
+      alert('Room number must be exactly 3 digits');
+      roomNumber.focus();
+      return;
+    }
+  });
+</script>
+
         <h5 class="fw-bold">Brooklyn College & CUNY Library Computer Login Information</h5>
         <button class="btn btn-maroon w-100 mt-2" data-bs-toggle="modal" data-bs-target="#login-instructions">Click Here for Instructions</button>
 
-	<!-- Modal -->
+	<!-- Modal/Pop Up -->
 	<div class="modal fade" id="login-instructions">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
@@ -184,7 +285,7 @@
       				<div class="modal-body">
 					<strong>Login for Library Computers for Current Students:</strong>
         				<ul>
-        					<li><strong>User ID</strong> = your 8-digit CUNY EmplID</li>
+        					<li><strong>User ID</strong> = your 8-digit CUNY EMPLID</li>
             					<li><Strong>Password Format</strong> = FLMM/DD/YY</li>
             					<ul>
             						<li>FL = Your CUNYfirst official First and Last initials (upper case)</li>
