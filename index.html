@@ -168,7 +168,40 @@
         </div>
 
         <h5 class="fw-bold">Brooklyn College & CUNY Library Computer Login Information</h5>
-        <button class="btn btn-maroon w-100 mt-2">Click Here for Instructions</button>
+        <button class="btn btn-maroon w-100 mt-2" data-bs-toggle="modal" data-bs-target="#login-instructions">Click Here for Instructions</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="login-instructions">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+
+      				<!-- Modal Header -->
+				<div class="modal-header">
+        				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+
+      				<!-- Modal body -->
+      				<div class="modal-body">
+					<strong>Login for Library Computers for Current Students:</strong>
+        				<ul>
+        					<li><strong>User ID</strong> = your 8-digit CUNY EmplID</li>
+            					<li><Strong>Password Format</strong> = FLMM/DD/YY</li>
+            					<ul>
+            						<li>FL = Your CUNYfirst official First and Last initials (upper case)</li>
+                					<li>MM/DD/YY = your 6-digit birthday with the SLASHES</li>
+                					<li>Example: If your name is Jalil Doe and your birthday is November 21, 1998, your password would be JD11/21/98</li>
+						</ul>
+					</ul>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
       </div>
     </div>
   </main>
