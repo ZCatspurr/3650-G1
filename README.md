@@ -24,7 +24,7 @@
 
 ## Usage 
 
-This web application can be opended from work desktop, laptop, or smartphone. If you are on campus and you and a friend or classmate want a personal 
+This web application can be opened from work desktop, laptop, or smartphone. If you are on campus and you and a friend or classmate want a personal 
 area free of distractions, a study room would be perfect for you. You can see what study rooms are available in advance, meaning if you want a study room 
 with amenitites such as a television and whiteboard, you won't have to go all the way to the library wait on the line, just to be told that the room is full. 
 This web app acts as the middle man between you and the room.
@@ -52,7 +52,7 @@ This web app acts as the middle man between you and the room.
 ## Issues (Work In Progress)
 *Displaying Available Study Rooms
 *Updating the System of when a room is occupied 
-*Button Functionality pertaining to loging in and joining a room
+*Button Functionality pertaining to logging in and joining a room
 
 
 
